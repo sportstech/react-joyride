@@ -293,7 +293,13 @@ export default class JoyrideStep extends React.Component {
           isPositioned={step.isFixed || hasPosition(target)}
           open={this.open}
           placement={step.placement}
-          target={step.target}
+          // target={step.target}
+
+          /* SportsHub floaterProps */
+          target="body"
+          hideArrow={true}
+          disableAnimation={true}
+          styles={{ floater: { transition: 'none' } }}
           {...step.floaterProps}
         >
           <Beacon

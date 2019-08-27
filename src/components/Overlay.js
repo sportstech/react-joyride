@@ -114,14 +114,16 @@ export default class JoyrideOverlay extends React.Component {
 
     return {
       ...(isLegacy() ? styles.spotlightLegacy : styles.spotlight),
-      height: Math.round(elementRect.height + spotlightPadding * 2),
+      height: Math.round(elementRect.width + spotlightPadding * 2),
       left: Math.round(elementRect.left - spotlightPadding),
       opacity: showSpotlight ? 1 : 0,
       pointerEvents: spotlightClicks ? 'none' : 'auto',
       position: isFixedTarget ? 'fixed' : 'absolute',
-      top,
+      top: Math.round(top + elementRect.height / 2 - elementRect.width / 2),
       transition: 'opacity 0.2s',
       width: Math.round(elementRect.width + spotlightPadding * 2),
+      borderRadius: '50%',
+      border: '2px solid #6E6E6E',
     };
   }
 
@@ -204,7 +206,7 @@ export default class JoyrideOverlay extends React.Component {
     };
 
     let spotlight = placement !== 'center' && showSpotlight && (
-      <Spotlight styles={this.spotlightStyles} />
+      <Spotlight styles={this.spotlightStyles} className="react-joyride__spotlight" />
     );
 
     // Hack for Safari bug with mix-blend-mode with z-index
