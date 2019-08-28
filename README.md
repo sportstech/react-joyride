@@ -1,3 +1,20 @@
+# Add to Project
+
+### Install react-joyride initially
+
+- `yarn add react-joyride@^2.1.1`
+- Move the package from `node_modules` to a "`packages/`" folder at app root
+
+### Download & build the modified package
+
+1. Clone this repo locally into a fresh folder locally
+1. `yarn install`
+1. `yarn build`
+1. Overwrite the `lib` and `es` index files in your App: `packages/react-joyride` accordingly
+1. Use in your components! `import Joyride from '../packages/react-joyride'`
+
+---
+
 # React Joyride
 
 [![](https://badge.fury.io/js/react-joyride.svg)](https://www.npmjs.com/package/react-joyride) [![](https://travis-ci.org/gilbarbara/react-joyride.svg)](https://travis-ci.org/gilbarbara/react-joyride) [![](https://api.codeclimate.com/v1/badges/43ecb5536910133429bd/maintainability)](https://codeclimate.com/github/gilbarbara/react-joyride/maintainability) [![](https://api.codeclimate.com/v1/badges/43ecb5536910133429bd/test_coverage)](https://codeclimate.com/github/gilbarbara/react-joyride/test_coverage)
